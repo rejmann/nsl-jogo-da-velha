@@ -13,7 +13,10 @@ function criarTabuleiro() {
   const quadrados = Array(9).fill(0);
   quadrados.forEach((_, index) => {
     let identificador = index + 1;
+
     cell.setAttribute("id", identificador);
+    cell.setAttribute("onclick", `marcarJogada(${identificador})`);
+
     board.appendChild(cell.cloneNode(true));
   });
 }
